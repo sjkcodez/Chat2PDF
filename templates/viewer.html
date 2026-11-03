@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Solve CAPTCHA — Chat2PDF{% endblock %}
+{% block content %}
+<section class="card">
+  <h2>Solve the CAPTCHA below</h2>
+  <p class="muted">Chrome is running on the server. Interact with it as if it were a window on your desktop.</p>
+  <iframe class="captcha-frame big" src="{{ vnc_url }}"></iframe>
+  <p class="muted small">When the chat page loads normally, go back to the <a href="{{ url_for('index') }}">converter</a> — it will detect the solve automatically.</p>
+</section>
+{% endblock %}

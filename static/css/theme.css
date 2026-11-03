@@ -1,0 +1,33 @@
+/* DeepSeek-inspired palette, both modes */
+:root {
+  --brand:        #4D6BFE;
+  --brand-hover:  #3B5BFF;
+  --brand-soft:   rgba(77, 107, 254, 0.12);
+  --success:      #22C55E;
+  --error:        #EF4444;
+  --warn:         #F59E0B;
+  --radius:       14px;
+  --radius-sm:    8px;
+  --transition:   180ms ease;
+  --font: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+html[data-theme="dark"] {
+  --bg:          #0F0F10;
+  --surface:     #1A1A1C;
+  --surface-2:   #232327;
+  --border:      #2E2E33;
+  --text:        #F4F4F5;
+  --text-muted:  #A1A1AA;
+  --shadow:      0 8px 30px rgba(0,0,0,0.45);
+}
+
+html[data-theme="light"] {
+  --bg:          #F7F8FA;
+  --surface:     #FFFFFF;
+  --surface-2:   #F1F2F4;
+  --border:      #E4E4E7;
+  --text:        #18181B;
+  --text-muted:  #71717A;
+  --shadow:      0 8px 30px rgba(0,0,0,0.08);
+}

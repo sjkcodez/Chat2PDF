@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Convert — Chat2PDF{% endblock %}
+{% block content %}
+<section class="hero">
+  <h1>Turn any shared chat into a PDF.</h1>
+  <p class="muted">Paste a ChatGPT, DeepSeek, Gemini, Grok or Claude share link below.</p>
+</section>
+
+<section class="card">
+  <div class="input-row">
+    <input id="url-input" type="url" placeholder="https://chatgpt.com/share/…"
+           autocomplete="off" spellcheck="false">
+  </div>
+  <div class="input-row" style="margin-top: 10px;">
+    <input id="filename-input" type="text"
+           placeholder="Output filename (optional) — e.g. School-project"
+           autocomplete="off" spellcheck="false" maxlength="80">
+  </div>
+  <div class="input-row" style="margin-top: 10px; justify-content: flex-end;">
+    <button id="convert-btn" class="btn-primary">Convert</button>
+  </div>
+  <p id="error-msg" class="error hidden"></p>
+</section>
+
+<section id="progress-card" class="card hidden">
+  <div class="progress-head">
+    <span id="status-dot" class="dot"></span>
+    <span id="status-text">Starting…</span>
+  </div>
+  <div class="progress-bar"><div id="progress-fill" class="progress-fill"></div></div>
+  <p id="status-sub" class="muted small"></p>
+
+  <div id="captcha-box" class="hidden">
+    <p class="warn">⚠️ Human verification detected.</p>
+    <a id="solve-btn" class="btn-primary" href="#" target="_blank" rel="noopener">
+      Open CAPTCHA Solver
+    </a>
+    <iframe id="captcha-frame" class="captcha-frame hidden"></iframe>
+  </div>
+
+  <div id="done-box" class="hidden">
+    <a id="download-btn" class="btn-primary big" href="#">⬇ Download PDF</a>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/app.js') }}" defer></script>
+{% endblock %}

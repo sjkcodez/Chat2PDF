@@ -1,0 +1,4 @@
+Flask>=3.0
+gunicorn>=22.0
+rebrowser-playwright>=1.52
+tf-playwright-stealth>=1.1
